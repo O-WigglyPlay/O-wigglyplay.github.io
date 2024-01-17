@@ -59,4 +59,144 @@ AC 기능을 위해 clear함수로 Value값을 초기화 해주고 퍼센트 함
     setValue(0);
   }
 ```
+계산식   
+```js
+  const calculate = () => {
+    if (operator === "/") {
+      setValue(parseFloat(OldValue) / parseFloat(Value));
+    } else if (operator === "X") {
+      setValue(parseFloat(OldValue) * parseFloat(Value));
+    } else if (operator === "-") {
+      setValue(parseFloat(OldValue) - parseFloat(Value));
+    } else if (operator === "+") {
+      setValue(parseFloat(OldValue) + parseFloat(Value));
+    }
+  }
+```
 
+html 구성
+```js
+    <div className="CalculatorArea">
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <div className="Display">
+            <h1 className={styles.result}>{Value}</h1>
+          </div>
+          <div className={styles.btn_container}>
+            <button className={styles.gary} onClick={clear}>AC</button>
+            <button className={styles.gary} onClick={changeSign}>+/-</button>
+            <button className={styles.gary} onClick={percent}>%</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'/'}>÷</button>
+            <button className={styles.deepgray} onClick={inputValue} value={7}>7</button>
+            <button className={styles.deepgray} onClick={inputValue} value={8}>8</button>
+            <button className={styles.deepgray} onClick={inputValue} value={9}>9</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'X'}>X</button>
+            <button className={styles.deepgray} onClick={inputValue} value={4}>4</button>
+            <button className={styles.deepgray} onClick={inputValue} value={5}>5</button>
+            <button className={styles.deepgray} onClick={inputValue} value={6}>6</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'-'}>-</button>
+            <button className={styles.deepgray} onClick={inputValue} value={1}>1</button>
+            <button className={styles.deepgray} onClick={inputValue} value={2}>2</button>
+            <button className={styles.deepgray} onClick={inputValue} value={3}>3</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'+'}>+</button>
+            <button className={styles.zero} onClick={inputValue} value={0}>0</button>
+            <button className={styles.deepgray} onClick={inputValue} value={"."}>.</button>
+            <button className={styles.orange} onClick={calculate}>=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+```
+
+최종 코드
+```js
+import react, { useState } from 'react';
+import styles from './Calculator.module.css'
+
+const Calculator_hard = () => {
+  const [Value, setValue] = useState(0);
+  const [OldValue, setOldValue] = useState(0);
+  const [operator, setOperator] = useState(0);
+
+  const inputValue = (e) => {
+    let input = e.target.value;
+    if (Value === 0) {
+      setValue(input);
+    } else {
+      setValue(Value + input);
+    }
+  }
+
+  const clear = () => {
+    setValue(0);
+  }
+
+  const percent = (e) => {
+    setValue(Value / 100);
+  }
+
+  const changeSign = () => {
+    if (Value > 0) {
+      setValue(-Value);
+    } else {
+      setValue(Math.abs(Value));
+    }
+  }
+
+  const operatorHandle = (e) => {
+    let operatorInput = e.target.value;
+    setOperator(operatorInput);
+    setOldValue(Value);
+    setValue(0);
+  }
+
+  const calculate = () => {
+    if (operator === "/") {
+      setValue(parseFloat(OldValue) / parseFloat(Value));
+    } else if (operator === "X") {
+      setValue(parseFloat(OldValue) * parseFloat(Value));
+    } else if (operator === "-") {
+      setValue(parseFloat(OldValue) - parseFloat(Value));
+    } else if (operator === "+") {
+      setValue(parseFloat(OldValue) + parseFloat(Value));
+    }
+  }
+
+  return (
+    <div className="CalculatorArea">
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <div className="Display">
+            <h1 className={styles.result}>{Value}</h1>
+          </div>
+          <div className={styles.btn_container}>
+            <button className={styles.gary} onClick={clear}>AC</button>
+            <button className={styles.gary} onClick={changeSign}>+/-</button>
+            <button className={styles.gary} onClick={percent}>%</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'/'}>÷</button>
+            <button className={styles.deepgray} onClick={inputValue} value={7}>7</button>
+            <button className={styles.deepgray} onClick={inputValue} value={8}>8</button>
+            <button className={styles.deepgray} onClick={inputValue} value={9}>9</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'X'}>X</button>
+            <button className={styles.deepgray} onClick={inputValue} value={4}>4</button>
+            <button className={styles.deepgray} onClick={inputValue} value={5}>5</button>
+            <button className={styles.deepgray} onClick={inputValue} value={6}>6</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'-'}>-</button>
+            <button className={styles.deepgray} onClick={inputValue} value={1}>1</button>
+            <button className={styles.deepgray} onClick={inputValue} value={2}>2</button>
+            <button className={styles.deepgray} onClick={inputValue} value={3}>3</button>
+            <button className={styles.orange} onClick={operatorHandle} value={'+'}>+</button>
+            <button className={styles.zero} onClick={inputValue} value={0}>0</button>
+            <button className={styles.deepgray} onClick={inputValue} value={"."}>.</button>
+            <button className={styles.orange} onClick={calculate}>=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Calculator_hard;
+```
+
+여러 문서를 보면서 만들었지만 지금 돌아보면 그렇게 어렵지 않았는데 처음 시작할때는 어떻게 계산시키고 어떻게 구성할지에 대해서 하나도 모르겠어서 좀 어려웠던 것 같다...   
