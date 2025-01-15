@@ -1,4 +1,5 @@
-<!-- ---
+<!-- 
+---
 layout: post
 title: Welcome to Not Pure Poole
 date: 2020-09-29 23:18 +0800
@@ -166,4 +167,6 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur e
 
 Want to see something else added? <a href="https://github.com/vszhub/not-pure-poole/issues/new">Open an issue.</a>
 
-[^fn-sample_footnote]: Handy! Now click the return link to go back. -->
+[^fn-sample_footnote]: Handy! Now click the return link to go back. 
+
+-->
