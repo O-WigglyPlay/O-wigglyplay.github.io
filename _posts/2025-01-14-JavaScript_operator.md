@@ -2,7 +2,7 @@
 layout: post
 categories: blog
 title: 자바스크립트 연산자
-tags: [JavaScript, JS, 자바스크립트, 자스, Web, 프론트엔드]
+tags: [Javacript, 프론트엔드]
 date: 2025-01-14
 toc: true
 ---

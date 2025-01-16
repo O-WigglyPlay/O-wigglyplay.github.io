@@ -2,8 +2,8 @@
 layout: post
 categories: blog
 title: 깨끗한 코드 좋은 코드
-tags: [자기계발, 클린코딩]
-date: 2024-01-13
+tags: [클린코딩]
+date: 2024-01-11
 toc: true
 ---
 

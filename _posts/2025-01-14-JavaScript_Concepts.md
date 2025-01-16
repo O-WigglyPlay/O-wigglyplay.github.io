@@ -1,13 +1,17 @@
 ---
 layout: post
 categories: blog
-title: 자바스크립트 기초 문법 및 변수
-tags: [JavaScript, JS, 자바스크립트, 자스, Web, 프론트엔드]
+title: 자바스크립트 기초 문법 - 기초 및 변수
+tags: [JavaScript, 프론트엔드]
 date: 2025-01-14
 toc: true
 ---
 
-### JS 선언문
+# 제 2장 : 자바스크립트 기초 문법
+
+## 자바스크립트 기초 문법
+
+### 자바스크립트 선언문
 
 ```js
 <script>자바스크립트 코드</script>
@@ -21,7 +25,7 @@ toc: true
 script 태그의 위치는 상관이 없다. <br>
 head, body 둘 다 가능하다. <br>
 
-### JS 주석 방법
+### 자바스크립트 주석 방법
 
 ```js
 // 한 줄 주석

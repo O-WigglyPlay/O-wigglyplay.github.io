@@ -2,7 +2,7 @@
 layout: post
 categories: blog
 title: useState를 활용한 계산기 만들기
-tags: [React, 리액트, Web, 프론트엔드]
+tags: [React, 프론트엔드]
 date: 2024-01-15
 ---
 
